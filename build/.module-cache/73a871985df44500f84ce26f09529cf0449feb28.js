@@ -6,11 +6,12 @@ var Note = React.createClass({displayName: "Note",
     this.setState({editing:true});
   },
   save: function() {
-    this.props.onChange(this.refs.newText.getDOMNode().value, this.props.index)
+    var val = this.refs.newText.getDOMNode().value;
+    alert("TODO: Saving note value"+ val)
     this.setState({editing:false})
   },
   remove: function() {
-    this.props.onRemove(this.props.index);
+    alert('removing note');
   },
   renderDisplay: function() {
     return (
@@ -52,41 +53,11 @@ var  Board = React.createClass({displayName: "Board",
       }
     } 
   },
-  getInitialState: function() {
-    return {
-      notes: [
-        'call mom',
-        'go to dentist',
-        'walk cat',
-        'learn React and Flux'
-      ]
-    };
-  },
-  update: function(newText, i) {
-    var arr = this.state.notes;
-    arr[i] = newText;
-    this.setState({notes:arr});
-  },
-  remove: function(i) {
-    var arr = this.state.notes;
-    arr.splice(i, 1);
-    this.setState({notes:arr});
-  },
-  eachNote: function(note, i) {
-    return (
-      React.createElement(Note, {key: i, 
-        index: i, 
-        onChange: this.update, 
-        onRemove: this.remove
-      }, note)
-      );
-  },
+
   render: function() {
-    return (React.createElement("div", {className: "board"}, 
-        this.state.notes.map(this.eachNote)
-      ));
+    return React.createElement("div", {className: "board"}, " ", this.props.count, " ")
   }
 })
 
 React.render( React.createElement(Board, {count: 10}),
-  document.getElementById('react-container'));
+  document.getElementById());
