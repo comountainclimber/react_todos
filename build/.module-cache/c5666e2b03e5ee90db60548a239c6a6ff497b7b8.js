@@ -6,7 +6,7 @@ var Note = React.createClass({displayName: "Note",
     this.style = {
       right: this.randomBetween(0, window.innerWidth - 150) + 'px',
       top: this.randomBetween(0, window.innerHeight - 150) + 'px',
-      transform: 'rotate(' + this.randomBetween(-15, 15) + 'deg)'
+      tranform: 'rotate(' + this.randomBetween(-15, 15) + 'deg)'
     };
   },
   randomBetween: function(min, max) {
@@ -73,15 +73,12 @@ var  Board = React.createClass({displayName: "Board",
   },
   add: function(text) {
     var arr = this.state.notes;
-    arr.push({
-      id: this.nextId(),
-      note: text
-    });
+    arr.push(text);
     this.setState({notes: arr});
   },
   update: function(newText, i) {
     var arr = this.state.notes;
-    arr[i].note = newText;
+    arr[i] = newText;
     this.setState({notes:arr});
   },
   remove: function(i) {
@@ -91,11 +88,11 @@ var  Board = React.createClass({displayName: "Board",
   },
   eachNote: function(note, i) {
     return (
-      React.createElement(Note, {key: note.id, 
+      React.createElement(Note, {key: i, 
         index: i, 
         onChange: this.update, 
         onRemove: this.remove
-      }, note.note)
+      }, note)
       );
   },
   render: function() {

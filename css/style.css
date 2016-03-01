@@ -17,13 +17,13 @@ div.board {
     background-color: brown;
     width: 100%;
     background: #263248;
-    background: -moz-radial-gradient(center, ellipse cover, #263248 57%, #263248 99%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(57%, #eab92d), color-stop(99%, #263248));
-    background: -webkit-radial-gradient(center, ellipse cover, #263248 57%, #263248 99%);
-    background: -o-radial-gradient(center, ellipse cover, #263248 57%, #263248 99%);
-    background: -ms-radial-gradient(center, ellipse cover, #263248 57%, #263248 99%);
-    background: radial-gradient(ellipse at center, #263248 57%, #263248 99%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#263248', endColorstr='#263248', GradientType=1);
+    background: -moz-radial-gradient(center, ellipse cover, #263248 57%, #151B27 99%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(57%, #263248), color-stop(99%, #151B27));
+    background: -webkit-radial-gradient(center, ellipse cover, #263248 57%, #151B27 99%);
+    background: -o-radial-gradient(center, ellipse cover, #263248 57%, #151B27 99%);
+    background: -ms-radial-gradient(center, ellipse cover, #263248 57%, #151B27 99%);
+    background: radial-gradient(ellipse at center, #263248 57%, #151B27 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#263248', endColorstr='#151B27', GradientType=1);
 
 }
 
@@ -32,7 +32,7 @@ div.note {
     width: 150px;
     background-color: yellow;
     margin: 2px 0;
-    position: relative;
+    position: absolute;
     cursor: -webkit-grab;
     -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
     box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
